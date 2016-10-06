@@ -16,7 +16,7 @@ module ApiUtils
   end
 
   def self.symbol_to_string(sym)
-    sym.class == Symbol ? sym.to_s : sym
+    sym.class == Symbol ? sym.to_s.split('_').join(' ') : sym.split('_').join(' ')
   end
 
 end
