@@ -12,11 +12,11 @@ module ApiUtils
 
   def self.string_to_symbol(s)
     s.gsub!(/[()%]*/, '')
-    s.gsub(' ', '_').downcase.to_sym
+    s.gsub(' ', '_').to_sym
   end
 
   def self.symbol_to_string(sym)
-    sym.class == Symbol ? self.camelize_with_space(sym.to_s) : self.camelize_with_space(sym)
+    sym.class == Symbol ? sym.to_s : sym
   end
 
 end
