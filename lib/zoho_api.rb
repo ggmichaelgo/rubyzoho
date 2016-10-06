@@ -107,7 +107,7 @@ module ZohoApi
     def primary_key(module_name)
       activity_keys = {'Tasks' => :activityid, 'Events' => :activityid, 'Calls' => :activityid}
       return activity_keys[module_name] unless activity_keys[module_name].nil?
-      (module_name.downcase.chop + 'id').to_sym
+      (module_name.upcase.chop + 'id').to_sym
     end
 
     def primary_key?(module_name, field_name)
